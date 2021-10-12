@@ -4,8 +4,6 @@ do_size     = ["tiny", "small", "medium"]
 size_chosen = do_size[number]
 size_limit  = size_chosen.size.to_i
 
-puts "#{title}"
-
 # Character name chosen from number
 name_number = File.read("data/identity/number.txt").strip.to_i
 
