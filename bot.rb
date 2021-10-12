@@ -9,7 +9,7 @@ puts "Transmission"
 size_limit.times do
   # Character name chosen from number
   name_number = File.read("data/identity/number.txt").strip.to_i
-  name_list   = File.read("data/identity/number.txt").split(", ")
+  name_list   = File.read("data/identity/name_list.txt").split(", ")
   name        = name_list[name_number]
 
   system("date > data/date/date.txt)
