@@ -1,6 +1,6 @@
 ![image](https://raw.githubusercontent.com/LWFlouisa/UnFictionWordProcessor/main/images/exitsubject.png)
 
-# UnFictionWordProcessor
+# Unfiction Word Processor
 Prototype terminal based processor.
 
 ## Download
