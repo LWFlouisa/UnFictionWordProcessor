@@ -11,6 +11,7 @@ name_number = File.read("data/identity/number.txt").strip.to_i
 
 # Base dialogue sequence on size limit.
 size_limit.times do
+  old_dialogue = File.read("archive/dialogue.txt").strip.to_s
 
   # Username logistics
   name_list   = File.read("data/identity/name_list.txt").split(", ")
@@ -23,7 +24,13 @@ size_limit.times do
   date = File.read("data/date/date.txt).strip.to_i
 
   # Print character dialogue to screen.
-  print "[#{date} #{name}] "; dialogue = gets.chomp
+  print "[#{date} #{name}] "; new_dialogue = gets.chomp
+
+  # Autosaves dialogue archive. Auto appends old dialogue above new dialogue.
+  open("archive/dialogue.txt", "w") { |f|
+    f.puts old_dialogue
+    f.puts new_dialogue
+  }
 
   # If writer specifies exit then aborts
   if dialogue == "exit"
