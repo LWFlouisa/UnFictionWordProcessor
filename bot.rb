@@ -6,9 +6,10 @@ size_limit  = size_chosen.size.to_i
 
 puts "Transmission"
 
+# Character name chosen from number
+name_number = File.read("data/identity/number.txt").strip.to_i
+
 size_limit.times do
-  # Character name chosen from number
-  name_number = File.read("data/identity/number.txt").strip.to_i
   name_list   = File.read("data/identity/name_list.txt").split(", ")
   name        = name_list[name_number]
 
@@ -20,5 +21,12 @@ size_limit.times do
 
   if dialogue == "exit"
     abort
+  end
+
+  # Changes name as if in a chatroom.
+  if name_number == name_limit
+    name_number = 0
+  else
+    name_number = name_number + 1
   end
 end
